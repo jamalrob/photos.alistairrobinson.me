@@ -1,0 +1,15 @@
+.photoContainer {
+    position: relative;
+    width: 7%;
+    height: 200px;
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+}
+
+.galleryContainer {
+    columns: 8;
+    padding: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
