@@ -8,7 +8,6 @@
 }
 
 .galleryContainer {
-    columns: 8;
     padding: 4rem;
     display: flex;
     flex-wrap: wrap;
