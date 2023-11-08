@@ -1,7 +1,8 @@
 .photoContainer {
     position: relative;
     width: 7%;
-    height: 200px;
+    min-width: 100px;
+    height: 120px;
     display: flex;
     padding: 20px;
     margin: 10px;
