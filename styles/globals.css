@@ -10,7 +10,7 @@ body {
 @media (max-width: 600px) {
     body {
         font-size: 18px;
-    }    
+    }
 }
 
 * {
@@ -18,7 +18,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #efefef;
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ img {
 
 .lightText {
     color: #888;
-}  
+}
 
 .lightText span {
     margin-left: 0.76rem;

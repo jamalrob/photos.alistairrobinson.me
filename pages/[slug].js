@@ -13,27 +13,19 @@ const imagekit = new ImageKit({
 });
 
 export default function PhotoPage({ post }) {
-    let width = 1000;
+    let width = 1200;
 
-    console.log("-------------------")
-    console.log(post)
-    console.log("-------------------")
-
-    if (post.width === post.height){
+    if (Math.abs(post.width - post.height) < 100){
+        // Square or almost square
         width = 760;
     }
 
-    const imageStyle = {
-        width: 'auto',
-        height: 'auto',
-    }
-
     const imageContainerStyle = {
-        width: `${width}px`,
+        maxWidth: `${width}px`,
         height: 'auto',
-        position: 'absolute'
+        position: 'relative',
+        margin: '20px auto'
     }
-
 
     const url = imageKitLoader({
         src: post.name,
@@ -46,8 +38,8 @@ export default function PhotoPage({ post }) {
             <title>{post.slug}</title>
             </Head>
             <div style={imageContainerStyle}>
-                <h1>{post.slug}</h1>
                 <img src={url} />
+                <p>{post.customMetadata.description}</p>
             </div>
         </Layout>
     );

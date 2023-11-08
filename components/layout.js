@@ -33,7 +33,7 @@ export default function Layout({ children, home }) {
         <Link href="/about" title="About">About</Link>
         <Link href="/tags" title="About">Tags</Link>
       </header>
-      <main>{children}</main>
+      <main style={{padding: '20px'}}>{children}</main>
     </div>
   );
 }
