@@ -14,7 +14,8 @@ const imagekit = new ImageKit({
 
 export async function getStaticProps() {
     const images = await imagekit.listFiles({
-        path : "/"
+        path : "/",
+        sort: "ASC_NAME"
         }).then(response => {
         return response;
     }).catch(error => {
