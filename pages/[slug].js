@@ -4,13 +4,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { imageKitLoader } from '@/lib/imageLoader';
 import ImageKit from 'imagekit';
-import Link from 'next/link';
 
 const imagekit = new ImageKit({
     publicKey : process.env.IMAGEKIT_PUBLIC_KEY,
     privateKey : process.env.IMAGEKIT_PRIVATE_KEY,
     urlEndpoint : process.env.IMAGEKIT_URL_ENDPOINT
 });
+
 
 export default function PhotoPage({ post }) {
     let width = 1200;
@@ -24,13 +24,19 @@ export default function PhotoPage({ post }) {
         maxWidth: `${width}px`,
         height: 'auto',
         position: 'relative',
-        margin: '20px auto'
+        margin: '20px auto',
+        textAlign: 'center'
+    }
+
+    const imageStyle = {
+        maxHeight: '84vh',
+        margin: '0 auto'
     }
 
     const url = imageKitLoader({
         src: post.name,
         width: width,
-        quality: 90
+        quality: 84
     })
     return (
         <Layout>
@@ -38,8 +44,12 @@ export default function PhotoPage({ post }) {
             <title>{post.slug}</title>
             </Head>
             <div style={imageContainerStyle}>
-                <img src={url} />
-                <p>{post.customMetadata.description}</p>
+                <img src={url} style={imageStyle} />
+                <p>
+                    {post.customMetadata.description || ''}{post.customMetadata.description && '\u00A0 ꞏ \u00A0'}
+                    {post.customMetadata.camera_type || ''}{post.customMetadata.camera_type && '\u00A0 ꞏ \u00A0'}
+                    {post.customMetadata.friendly_date || ''}
+                </p>
             </div>
         </Layout>
     );
@@ -79,17 +89,6 @@ export async function getStaticPaths() {
     }).catch(error => {
         console.log(error);
     });
-
-    //const img = images[0]
-    //console.log(img)
-    console.log(images[0].height)
-    console.log("==========================")
-
-    //const img2 = imagekit.getFileDetails(params.slug, function(error, result) {
-    //    if(error) console.log(error);
-    //    else console.log(result);
-    //    return result;
-    //});
 
     return {
       props: {
