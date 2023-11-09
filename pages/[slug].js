@@ -1,7 +1,6 @@
 import styles from '@/styles/photos.module.css';
 import Layout from '@/components/layout';
 import Head from 'next/head';
-import Image from 'next/image';
 import { imageKitLoader } from '@/lib/imageLoader';
 import ImageKit from 'imagekit';
 

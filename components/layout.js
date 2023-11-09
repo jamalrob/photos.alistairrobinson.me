@@ -31,7 +31,7 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         <Link href="/">Home</Link>
         <Link href="/about" title="About">About</Link>
-        <Link href="/tags" title="About">Tags</Link>
+        {/*<Link href="/tags" title="About">Tags</Link>*/}
       </header>
       <main style={{padding: '20px'}}>{children}</main>
     </div>
