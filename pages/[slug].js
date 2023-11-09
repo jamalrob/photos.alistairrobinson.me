@@ -45,8 +45,8 @@ export default function PhotoPage({ post }) {
             <div style={imageContainerStyle}>
                 <img src={url} style={imageStyle} />
                 <p>
-                    {post.customMetadata.description || ''}{post.customMetadata.description && '\u00A0 ꞏ \u00A0'}
-                    {post.customMetadata.camera_type || ''}{post.customMetadata.camera_type && '\u00A0 ꞏ \u00A0'}
+                    {post.customMetadata.description || ''}{post.customMetadata.description && '\u00A0 \u00B7 \u00A0'}
+                    {post.customMetadata.camera_type || ''}{post.customMetadata.camera_type && '\u00A0 \u00B7 \u00A0'}
                     {post.customMetadata.friendly_date || ''}
                 </p>
             </div>
