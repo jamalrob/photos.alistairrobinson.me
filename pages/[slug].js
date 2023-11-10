@@ -53,8 +53,12 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
             <title>{post.slug}</title>
             </Head>
             <div id="photonav" style={photoNav}>
-            <Link href={previousImage.name} title="previous">&larr;</Link>
-            <Link href={nextImage.name} title="next">&rarr;</Link>
+            {previousImage && (
+                <Link href={previousImage.name} title="previous">&larr;</Link>
+            )}
+            {nextImage && (
+                <Link href={nextImage.name} title="next">&rarr;</Link>
+            )}
             </div>
             <div style={imageContainerStyle}>
                 <img src={url} style={imageStyle} />
@@ -116,14 +120,18 @@ export async function getStaticPaths() {
 
     //const thisImage = allImages[allImages.indexOf(ims[0])]
     const thisImage = ims[0]
-    const nextImage = allImages[allImages.indexOf(ims[0]) + 1]
-    const previousImage = allImages[allImages.indexOf(ims[0]) - 1]
+    let nextImage = allImages[allImages.indexOf(ims[0]) + 1]
+    let previousImage = allImages[allImages.indexOf(ims[0]) - 1]
+
+    //if (previousImage === undefined) {
+    //    previousImage = null;
+    //}
 
     return {
       props: {
         post: thisImage,
-        nextImage: nextImage,
-        previousImage: previousImage
+        nextImage: nextImage || null,
+        previousImage: previousImage || null
       },
     };
   }
