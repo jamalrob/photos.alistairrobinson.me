@@ -50,3 +50,7 @@ img {
     color: #bb5353;
     margin: 0 0.35rem;
 }
+
+#photonav a:hover {
+    text-decoration: none;
+}

@@ -40,19 +40,17 @@ export default function Photos({ images }) {
         <section className={styles.galleryContainer}>
             {images.map((image, i) =>
                 <div className={styles.photoContainer} key={i}>
-                    <>
-                    <Link href={`/${image.name}`}>
+                    <Link href={`/${image.name}`} style={{position: 'relative', display: 'contents'}}>
                         <Image
                             loader={imageKitLoader}
                             src={image.name}
                             alt="image"
                             fill={true}
-                            quality={84}
+                            quality={80}
                             style={{objectFit: 'contain'}}
                             sizes="10vw"
                         />
                     </Link>
-                    </>
                 </div>
             )}
 
