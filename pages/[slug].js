@@ -44,7 +44,7 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
     const url = imageKitLoader({
         src: post.name,
         width: width,
-        quality: 90
+        quality: 86
     })
 
     return (
