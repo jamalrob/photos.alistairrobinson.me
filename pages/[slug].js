@@ -4,6 +4,8 @@ import Head from 'next/head';
 import ImageKit from 'imagekit';
 import Link from 'next/link';
 import { imageKitLoader } from '@/lib/imageLoader';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 
 const imagekit = new ImageKit({
@@ -14,6 +16,20 @@ const imagekit = new ImageKit({
 
 
 export default function PhotoPage({ post, nextImage, previousImage }) {
+
+    /*
+    const router = useRouter()
+
+    useEffect(() => {
+        const onKeyup = ({key}) => {
+            if(key === 'ArrowRight'){
+                router.push(nextImage.name)
+            }
+        }
+        window.addEventListener('keyup', onKeyup)
+    }, [])
+    */
+
     let width = 1200;
 
     if (Math.abs(post.width - post.height) < 100){
@@ -36,9 +52,9 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
 
     const photoNav = {
         position: 'absolute',
-        top: '-5px',
+        top: '-3px',
         right: '10px',
-        fontSize: '2.2rem'
+        fontSize: '2rem'
     }
 
     const url = imageKitLoader({
@@ -56,6 +72,7 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
             {previousImage && (
                 <Link href={previousImage.name} title="previous">&larr;</Link>
             )}
+            {'\u00A0'}
             {nextImage && (
                 <Link href={nextImage.name} title="next">&rarr;</Link>
             )}
@@ -99,7 +116,7 @@ export async function getStaticPaths() {
   }
 
 
-  export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
 
     let ims = [];
 
