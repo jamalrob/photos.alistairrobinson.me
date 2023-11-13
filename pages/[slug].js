@@ -70,11 +70,11 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
             </Head>
             <div id="photonav" style={photoNav}>
             {previousImage && (
-                <Link href={previousImage.name} title="previous">&larr;</Link>
+                <Link href={previousImage.name.substring(0, previousImage.name.lastIndexOf('.'))} title="previous">&larr;</Link>
             )}
             {'\u00A0'}
             {nextImage && (
-                <Link href={nextImage.name} title="next">&rarr;</Link>
+                <Link href={nextImage.name.substring(0, nextImage.name.lastIndexOf('.'))} title="next">&rarr;</Link>
             )}
             </div>
             <div style={imageContainerStyle}>
@@ -104,7 +104,7 @@ export async function getStaticPaths() {
 
         return {
             params: {
-                slug: im.name
+                slug: im.name.substring(0, im.name.lastIndexOf('.'))
             },
         };
     });
@@ -130,7 +130,8 @@ export async function getStaticProps({ params }) {
     });
 
     ims = allImages.filter((im) => {
-        if (im.name === params.slug) {
+        if (im.name.substring(0, im.name.lastIndexOf('.')) === params.slug) {
+            console.log(im.name);
             return im.name;
         }
     })

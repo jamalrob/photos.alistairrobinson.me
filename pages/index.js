@@ -40,7 +40,7 @@ export default function Photos({ images }) {
         <section className={styles.galleryContainer}>
             {images.map((image, i) =>
                 <div className={styles.photoContainer} key={i}>
-                    <Link href={`/${image.name}`} style={{position: 'relative', display: 'contents'}} title={image.customMetadata.description}>
+                    <Link href={`/${image.name.substring(0, image.name.lastIndexOf('.'))}`} style={{position: 'relative', display: 'contents'}} title={image.customMetadata.description}>
                         <Image
                             loader={imageKitLoader}
                             src={image.name}
