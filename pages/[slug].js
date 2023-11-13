@@ -66,7 +66,7 @@ export default function PhotoPage({ post, nextImage, previousImage }) {
     return (
         <Layout>
             <Head>
-            <title>{post.slug}</title>
+            <title>{post.customMetadata.description}</title>
             </Head>
             <div id="photonav" style={photoNav}>
             {previousImage && (
