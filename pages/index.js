@@ -48,7 +48,7 @@ export default function Photos({ images }) {
                             fill={true}
                             quality={80}
                             style={{objectFit: 'contain'}}
-                            sizes="10vw"
+                            sizes="30vw, 50vw, 60vw, 70vw, 80vw, 90vw, 100vw"
                         />
                     </Link>
                 </div>

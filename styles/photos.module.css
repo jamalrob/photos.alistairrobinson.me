@@ -8,6 +8,13 @@
     margin: 10px;
 }
 
+@media (max-width:600px) {
+  .photoContainer {
+    width: 100%;
+    height: 170px;
+  }
+}
+
 .galleryContainer {
     padding: 0 3rem;
     display: flex;
