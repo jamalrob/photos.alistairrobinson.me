@@ -28,6 +28,7 @@
     background-color: #343434;
     width: 100%;
     z-index: 1;
+    font-size: 18px;
 }
 
 .header a {
