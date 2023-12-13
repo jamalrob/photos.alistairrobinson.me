@@ -18,7 +18,7 @@ export default function About() {
             <title>Alistair Robinson : photos : about me</title>
             </Head>
             <div style={imageContainerStyle}>
-                <p>I'm Alistair Robinson and this is a public place to put my photographs.</p>
+                <p>I’m Alistair Robinson and this is a public place to put my photographs.</p>
                 <p>Contact me at alistair.robinson@gmail.com. My blog is at <a href="https://blog.alistairrobinson.me">blog.alistairrobinson.me</a>.</p>
             </div>
         </Layout>
