@@ -35,7 +35,7 @@ export default function Photos({ images }) {
     return (
       <Layout>
         <Head>
-          <title>Photos</title>
+          <title>Alistair Robinson : photos</title>
         </Head>
         <section className={styles.galleryContainer}>
             {images.map((image, i) =>

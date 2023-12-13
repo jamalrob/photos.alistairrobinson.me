@@ -9,8 +9,7 @@ export default function About() {
         height: 'auto',
         position: 'relative',
         margin: '20px auto',
-        textAlign: 'left',
-        fontSize: '1.2rem'
+        textAlign: 'left'
     }
 
     return (
@@ -19,11 +18,8 @@ export default function About() {
             <title>Alistair Robinson : photos : about me</title>
             </Head>
             <div style={imageContainerStyle}>
-                <p>I am Alistair Robinson and this is a public place to put my photographs.</p>
-
-                <p>
-                    Feel free to contact me at alistair.robinson@gmail.com. My blog is at <a href="https://blog.alistairrobinson.me">blog.alistairrobinson.me</a>.
-                </p>
+                <p>I'm Alistair Robinson and this is a public place to put my photographs.</p>
+                <p>Contact me at alistair.robinson@gmail.com. My blog is at <a href="https://blog.alistairrobinson.me">blog.alistairrobinson.me</a>.</p>
             </div>
         </Layout>
     );
