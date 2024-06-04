@@ -30,7 +30,7 @@ export async function getStaticProps() {
 
 }
 
-export default function Photos({ images }) {
+export default function Photos({ images }) {  
 
     return (
       <Layout>
