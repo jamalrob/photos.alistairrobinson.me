@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}<title>Alistair Robinson : photos</title>{% endblock %}
+
+{% block content %}
+<section class="gallery">
+  {% for image in images %}
+  <div class="photo-thumb">
+    <a href="/{{ image.slug }}/" title="{{ image.description }}">
+      <img src="{{ image.thumb_url }}" alt="{{ image.description }}" loading="lazy">
+    </a>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
